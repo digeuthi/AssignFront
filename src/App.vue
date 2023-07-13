@@ -3,7 +3,6 @@
     <HeaderComponent />
     <router-view/>
     <div class="wrap">
-      
       <ContentComponent />
       <MenuComponent />
     </div>
@@ -14,10 +13,10 @@
 <script>
 
 import HeaderComponent from "./components/HeaderComponent.vue"
-import Login from "./views/common/Login.vue"
 import MenuComponent from "./components/ContentComponent.vue"
 import ContentComponent from "./components/MenuComponent.vue"
 import FooterComponent from "./components/FooterComponent.vue"
+
 
 export default {
   name: 'App',
@@ -26,7 +25,7 @@ export default {
     MenuComponent,
     ContentComponent,
     FooterComponent,
-    Login,
+    
 
   }
 };
