@@ -39,6 +39,19 @@
         <a href="javascript:;" @click="fnPage(`${paging.total_page_cnt}`)" class="last w3-button w3-border">&gt;&gt;</a>
         </span>
       </div>
+    <div>
+        <select v-model="search_key">
+            <option value="">- 선택 -</option>
+            <option value="author">작성자</option>
+            <option value="title">제목</option>
+            <option value="contents">내용</option>
+        </select>
+        &nbsp;
+        <input type="text" v-model="search_value" @keyup.enter="fnPage()">
+        &nbsp;
+        <button @click="fnPage()">검색</button>
+    </div>
+
     </div>
   </template>
   
