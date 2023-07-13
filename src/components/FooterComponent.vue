@@ -1,7 +1,7 @@
 <template>
     <hr/>
         <footer>
-            FooterComponent
+           
         </footer>
 </template>
 

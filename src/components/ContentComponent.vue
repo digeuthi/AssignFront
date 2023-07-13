@@ -1,5 +1,5 @@
 <template>
-    <div> ContentComponent</div>
+    <div> </div>
 </template>
 
 <script>
