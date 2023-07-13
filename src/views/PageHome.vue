@@ -8,12 +8,13 @@
   
   <script>
   // @ is an alias to /src
-  import HeaderComponent from "./components/HeaderComponent.vue"
+  import HelloWorld from '@/components/HelloWorld.vue'
+
   
   export default {
     name: 'PageHome',
     components: {
-        HeaderComponent
+        HelloWorld
     }
   }
   </script>

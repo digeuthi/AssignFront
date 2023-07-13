@@ -79,27 +79,68 @@
     },
     methods: {
       fnGetList() {
-        this.list = [
-          {
-              "idx":1,
-              "title": "제목1",
-              "author": "작성자1",
-              "created_at": "작성일시1"
-          },
-          {
-              "idx":1,
-              "title": "제목1",
-              "author": "작성자1",
-              "created_at": "작성일시1"
-          },
-          {
-              "idx":1,
-              "title": "제목1",
-              "author": "작성자1",
-              "created_at": "작성일시1"
-          }
-        ]
+        this.requestBody = { // 데이터 전송        
+        keyword: this.keyword,
+        page: this.page,
+        size: this.size
+    }
+
+        this.$axios.get(this.$serverUrl + "/board/list", {
+        params: this.requestBody,
+        headers: {}
+    }).then((res) => {      
+
+        if (res.data.result_code === "OK") {
+        this.list = res.data.data
+        this.paging = res.data.pagination
+        this.no = this.paging.total_list_cnt - ((this.paging.page - 1) * this.paging.page_size)
+        }
+
+    }).catch((err) => {
+        if (err.message.indexOf('Network Error') > -1) {
+        alert('네트워크가 원활하지 않습니다.\n잠시 후 다시 시도해주세요.')
+        }
+    })
+
+        // this.list = [
+        //   {
+        //       "idx":1,
+        //       "title": "제목1",
+        //       "author": "작성자1",
+        //       "created_at": "작성일시1"
+        //   },
+        //   {
+        //       "idx":1,
+        //       "title": "제목1",
+        //       "author": "작성자1",
+        //       "created_at": "작성일시1"
+        //   },
+        //   {
+        //       "idx":1,
+        //       "title": "제목1",
+        //       "author": "작성자1",
+        //       "created_at": "작성일시1"
+        //   }
+        // ]
+      },
+      fnView(idx) {
+      this.requestBody.idx = idx
+      this.$router.push({
+        path: './detail',
+        query: this.requestBody
+      })
+    },
+    fnWrite() {
+      this.$router.push({
+        path: './write'
+      })
+    },
+    fnPage(n) {
+      if (this.page !== n) {
+        this.page = n
+        this.fnGetList()
       }
+    }
       }
   }
   </script>

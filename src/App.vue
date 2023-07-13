@@ -4,6 +4,7 @@
     <router-view/>
     <div class="wrap">
       <ContentComponent />
+      <HelloWorld msg="Welcome to Your Vue.js App"/>
       <MenuComponent />
     </div>
   </div>
@@ -11,6 +12,7 @@
 </template>
 
 <script>
+import HelloWorld from './components/HelloWorld.vue'
 import HeaderComponent from "./components/HeaderComponent.vue"
 import MenuComponent from "./components/ContentComponent.vue"
 import ContentComponent from "./components/MenuComponent.vue"
@@ -22,7 +24,8 @@ export default {
     HeaderComponent,
     MenuComponent,
     ContentComponent,
-    FooterComponent
+    FooterComponent,
+    HelloWorld
   }
 };
 </script>
