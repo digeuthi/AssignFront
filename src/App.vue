@@ -3,8 +3,8 @@
     <HeaderComponent />
     <router-view/>
     <div class="wrap">
+      
       <ContentComponent />
-      <HelloWorld msg="Welcome to Your Vue.js App"/>
       <MenuComponent />
     </div>
   </div>
@@ -12,8 +12,9 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
 import HeaderComponent from "./components/HeaderComponent.vue"
+import Login from "./views/common/Login.vue"
 import MenuComponent from "./components/ContentComponent.vue"
 import ContentComponent from "./components/MenuComponent.vue"
 import FooterComponent from "./components/FooterComponent.vue"
@@ -25,7 +26,8 @@ export default {
     MenuComponent,
     ContentComponent,
     FooterComponent,
-    HelloWorld
+    Login,
+
   }
 };
 </script>
