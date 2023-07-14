@@ -4,6 +4,7 @@ import BoardList from '@/views/board/BoardList.vue'
 import BoardDetail from '@/views/board/BoardDetail.vue'
 import BoardWrite from '@/views/board/BoardWrite.vue'
 import LoginForm from "@/views/common/LoginForm.vue"
+import SignUpForm from "@/views/common/SignUpForm.vue"
 
 const routes = [
   {
@@ -15,6 +16,11 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: LoginForm  //로그인 컴포넌트 추가
+  },
+  {
+    path: '/signUp',
+    name: 'SignUp',
+    component: SignUpForm //회원가입 컴포넌트 추가
   },
   {
     path: '/about',
