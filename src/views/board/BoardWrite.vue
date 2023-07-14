@@ -10,7 +10,8 @@
       </div>
       <div class="editor-wrapper">
         <textarea v-model="content" class="editor"></textarea>
-        <input type="file" @change="handleFileUpload" />
+        <label for="file-upload" class="w3-button w3-round w3-blue-gray file-upload-button">파일 선택</label>
+        <input id="file-upload" type="file" @change="handleFileUpload" style="display: none" />
         <img v-if="uploadedImage" :src="uploadedImage" alt="Uploaded Image" />
       </div>
       <div class="board-contents">
@@ -116,5 +117,14 @@
       min-height: 200px;
       padding: 10px;
       border: none;
+    }
+    .file-upload-wrapper {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .file-upload-button {
+      margin-left: 10px;
     }
   </style>
