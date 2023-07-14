@@ -1,5 +1,6 @@
 <template>
     <div class="board-list">
+      <h1>게시글 목록</h1>
       <div class="common-buttons">
         <button type="button" class="w3-button w3-round w3-blue-gray" v-on:click="fnWrite">등록</button>
       </div>
