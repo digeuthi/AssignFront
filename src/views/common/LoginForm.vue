@@ -1,7 +1,7 @@
 <template>
     <div>
       <div>
-        <h2>Log In</h2>
+        <h1>Log In</h1>
         <div id="loginForm">
           <form @submit.prevent="fnLogin">
             <p>
