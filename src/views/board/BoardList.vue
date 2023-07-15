@@ -43,7 +43,6 @@
     <div>
         <select v-model="search_key">
             <option value="">- 선택 -</option>
-            <option value="author">작성자</option>
             <option value="title">제목</option>
             <option value="contents">내용</option>
         </select>

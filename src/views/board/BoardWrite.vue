@@ -104,10 +104,17 @@
   }
   </script>
   <style scoped>
+    .h1 {
+      text-align: center;
+    }
+    .board-detail {
+      text-align: center;
+    }
     .editor-container {
       background-color: #f2f2f2;
       border: 1px solid #ccc;
       padding: 10px;
+      text-align: left;
     }
 
     .ck-editor__editable {
@@ -119,6 +126,7 @@
       display: flex;
       align-items: center;
       margin-bottom: 10px;
+      justify-content: flex-start;
     }
 
     .file-upload-button {

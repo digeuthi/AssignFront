@@ -1,6 +1,6 @@
 <template>
     <div>
-      <h2>회원가입</h2>
+      <h1>회원가입</h1>
       <form @submit.prevent="handleSubmit">
         <p>
           <label for="name">이름:</label>
@@ -45,7 +45,10 @@
   </script>
   
   <style scoped>
-
+#signupForm {
+    width: 500px;
+    margin: auto;
+  }
 .signup-form {
   max-width: 300px;
   margin: 0 auto;
