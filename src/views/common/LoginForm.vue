@@ -1,14 +1,14 @@
 <template>
     <div>
       <div>
-        <h1>Log In</h1>
+        <h1>로그인</h1>
         <div id="loginForm">
           <form @submit.prevent="fnLogin">
             <p>
-              <input class="w3-input" name="uid" placeholder="Enter your Email" v-model="user_id"><br>
+              <input class="w3-input" name="uid" placeholder="이메일을 입력하세요" v-model="user_id"><br>
             </p>
             <p>
-              <input name="password" class="w3-input" placeholder="Enter your password" v-model="user_pw" type="password">
+              <input name="password" class="w3-input" placeholder="비밀번호를 입력하세요" v-model="user_pw" type="password">
             </p>
             <p>
               <button type="submit" class="w3-button w3-green w3-round">Login</button>

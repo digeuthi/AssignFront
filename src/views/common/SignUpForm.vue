@@ -1,23 +1,23 @@
 <template>
     <div>
       <h1>회원가입</h1>
-      <form @submit.prevent="handleSubmit">
-        <p>
-          <label for="name">이름:</label>
-          <input type="text" id="name" v-model="name" required />
-        </p>
-        <p>
-          <label for="email">이메일:</label>
-          <input type="email" id="email" v-model="email" required />
-        </p>
-        <p>
-          <label for="password">비밀번호:</label>
-          <input type="password" id="password" v-model="password" required />
-        </p>
-        <div>
-          <button type="submit" class="w3-button w3-green w3-round">가입하기</button>
-        </div>
+      <div id="signUpForm">
+        <form @submit.prevent="handleSubmit">
+          <p>
+            <input class="w3-input input-field" name="name" placeholder="이름을 입력하세요" v-model="user_name"><br>
+          </p>
+          <p>
+            <input class="w3-input input-field" name="uid" placeholder="이메일을 입력하세요" v-model="user_id"><br>
+          </p>
+          <p>
+            <input name="password" class="w3-input input-field" placeholder="비밀번호를 입력하세요" v-model="user_pw" type="password">
+          </p>
+          <p>
+            <button type="submit" class="w3-button w3-green w3-round">가입하기</button>
+          </p>
+        <!-- <label for="name">이름 : </label>  -->
       </form>
+      </div>
     </div>
   </template>
   
@@ -45,6 +45,7 @@
   </script>
   
   <style scoped>
+
 #signupForm {
     width: 500px;
     margin: auto;
@@ -62,15 +63,33 @@
   margin-bottom: 10px;
 }
 
-.signup-form input[type="text"],
-.signup-form input[type="email"],
-.signup-form input[type="password"] {
-  width: 100%;
+input {
+  box-align: center;
+  width: 300px;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
   margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: inherit;
+    margin-bottom: 10px;
+  }
+  .input-field {
+  padding: 8px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  width: 500px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .signup-form button {
