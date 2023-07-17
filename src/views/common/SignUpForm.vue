@@ -21,26 +21,24 @@
     </div>
   </template>
   
-  <script>
-  export default {
-    data() {
-      return {
-        email: '',
-        password: '',
-        name: '',
-      };
-    },
-    methods: {
-      handleSubmit() {
-        // 회원가입 로직 구현
-        const userData = {
-          email: this.email,
-          password: this.password,
-          name: this.name,
-        };
-        console.log(userData);
-      },
-    },
+  <script setup>
+  import axios from 'axios';
+  import { ref } from 'vue';
+  
+  const email = ref('');
+  const password = ref('');
+  const name = ref('');
+  
+  const handleSubmit = () => {
+    // 회원가입 로직 구현
+    const userData = {
+      email: email.value,
+      password: password.value,
+      name: name.value,
+    };
+    console.log(userData);
+    alert('회원가입 되었습니다.');
+    axios.post('http://localhost:8081/user/sign-up');
   };
   </script>
   

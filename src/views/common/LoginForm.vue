@@ -19,32 +19,29 @@
     </div>
   </template>
   
-  <script>
-  
-  export default {
-    data() {
-      return {
-        user_id: '',
-        user_pw: ''
-      }
-    },
-    methods: {
-      fnLogin() {
-        if (this.user_id === '') {
-          alert('Email을 입력하세요.')
-          return
-        }
-  
-        if (this.user_pw === '') {
-          alert('비밀번호를 입력하세요.')
-          return
-        }
-  
-        alert('로그인 되었습니다.')
-      }
-    }
+  <script setup>
+import axios from 'axios';
+import { ref } from 'vue';
+
+const user_id = ref('');
+const user_pw = ref('');
+
+const fnLogin = () => {
+  if (user_id.value === '') {
+    alert('Email을 입력하세요.');
+    return;
   }
-  </script>
+
+  if (user_pw.value === '') {
+    alert('비밀번호를 입력하세요.');
+    return;
+  }
+
+  alert('로그인 되었습니다.');
+  axios.post('http://localhost:8081/user/sign-in');
+};
+</script>
+
   
   <style>
   #loginForm {
