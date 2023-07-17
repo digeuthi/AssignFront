@@ -22,24 +22,33 @@
   </template>
   
   <script setup>
+  import router from '@/router';
   import axios from 'axios';
   import { ref } from 'vue';
   
-  const email = ref('');
-  const password = ref('');
-  const name = ref('');
+  const user_name = ref('');
+  const user_id = ref('');
+  const user_pw = ref('');
   
   const handleSubmit = () => {
-    // 회원가입 로직 구현
-    const userData = {
-      email: email.value,
-      password: password.value,
-      name: name.value,
+    const user = {
+      name : user_name.value,
+      email : user_id.value,
+      password : user_pw.value
     };
-    console.log(userData);
-    alert('회원가입 되었습니다.');
-    axios.post('http://localhost:8081/user/sign-up');
+
+    axios.post('http://localhost:8081/user/sign-up', user)
+    .then((response) => {
+      console.log(response);
+      alert('회원가입 되었습니다.');
+      router.push("/user/sign-in");
+    })
+    .catch((error) => {
+      console.log(error);
+      alert('회원가입에 실패했습니다.');
+    });
   };
+  
   </script>
   
   <style scoped>
