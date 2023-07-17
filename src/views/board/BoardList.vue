@@ -102,7 +102,7 @@
         params: this.requestBody,
         headers: {}
     }).then((res) => {      
-
+        //
         if (res.data.result_code === "OK") {
         this.list = res.data.data
         this.paging = res.data.pagination
