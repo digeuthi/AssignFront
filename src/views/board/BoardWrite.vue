@@ -39,7 +39,7 @@
       content : content.value
     };
 
-    axios.post('http://localhost:8081/board', article)
+    axios.get('http://localhost:8081/board/test', article)
     .then((response) => {
       console.log(response);
       alert('등록 되었습니다.');
@@ -51,9 +51,10 @@
     });
   
 
-    const fnList = () => {
-      router.push("./list");
-    };
+    // const fnList = () => {
+    //   router.push("./list");
+    // };
+
   }
   </script>
   <style scoped>
