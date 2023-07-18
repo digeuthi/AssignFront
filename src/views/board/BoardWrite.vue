@@ -34,12 +34,12 @@
   const fnSave = () => {
 
     const article = {
-      title : title.value,
-      author : author.value,
-      content : content.value
+      boardTitle : title.value,
+      boardContent : author.value,
+      boardImageUrl : content.value
     };
 
-    axios.get('http://localhost:8081/board/test', article)
+    axios.post('http://localhost:8081/board', article)
     .then((response) => {
       console.log(response);
       alert('등록 되었습니다.');
@@ -50,7 +50,6 @@
       alert('작성에 실패했습니다.');
     });
   
-
     // const fnList = () => {
     //   router.push("./list");
     // };
@@ -82,7 +81,7 @@
       margin-bottom: 10px;
       justify-content: flex-start;
     }
-
+      
     .file-upload-button {
       margin-left: 10px;
     }

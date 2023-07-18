@@ -32,9 +32,9 @@
   
   const handleSubmit = () => {
     const user = {
-      name : user_name.value,
-      email : user_id.value,
-      password : user_pw.value
+      userName : user_name.value,
+      userEmail : user_id.value,
+      userPassword : user_pw.value
     };
 
     axios.post('http://localhost:8081/user/sign-up', user)
